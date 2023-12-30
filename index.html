@@ -58,16 +58,7 @@
 
 <body>
 
-      <script type="module">
-  import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.25/dist/web.js';
-
-  Typebot.initStandard({
-    typebot: "kretlikennel",
-    apiHost: "https://viewer-production-18c7.up.railway.app",
-  });
-</script>
-
-<typebot-standard style="height: 100vh; "></typebot-standard>
+      <typebot-standard style="height: 100vh; "></typebot-standard>
 
   <footer class="bg-white py-3 text-center">
 
@@ -81,6 +72,17 @@
 
 <h6><span style="color:#6C757D">CNPJ: 12.345.678/0001-23, Bem-estar e Saúde, R. da Alfândega, 100 - F4 - Centro, Rio de Janeiro - RJ, 20070-004, (21) 98877-8899</span></h6> 
           
+  const typebotInitScript = document.createElement("script");
+typebotInitScript.type = "module";
+typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.25/dist/web.js'
+  
+Typebot.initStandard({
+  typebot: "kretlikennel",
+  apiHost: "https://viewer-production-18c7.up.railway.app",
+});
+`;
+document.body.append(typebotInitScript);
+  
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
